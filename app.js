@@ -1,8 +1,9 @@
 let tg = window. Telegram.WebApp;
+let total = 0;
 
 tg.expand();
 tg.MainButton.textColor = '#FFFFFF';
-tg.MainButton. color = '#2cab37';
+tg.MainButton.color = '#2cab37';
 let items = [];
 function toggleItem(btn, itemId, price) {
     let item = items.find(i => i.id === itemId);
@@ -13,7 +14,7 @@ function toggleItem(btn, itemId, price) {
         btn.innerText = "удалить из корзины";
         let totalPrice = items.reduce((total, item) => total + item.price, 0);
         if (totalPrice > 0) {
-            tg.MainButton.setText('Общая цена товаров: ${totalPrice}');
+            tg.MainButton.setText('Общая цена товаров: ' + totalPrice);
             if (!tg.MainButton.isVisible) {
                 tg. MainButton.show();
             }
@@ -27,7 +28,7 @@ function toggleItem(btn, itemId, price) {
         btn.innerText = "Добавить в корзину";
         let totalPrice = items.reduce((total, item) => total + item.price, 0);
         if (totalPrice > 0) {
-            tg.MainButton.setText('Общая цена товаров: ${totalPrice}');
+            tg.MainButton.setText('Общая цена товаров: ' + totalPrice);
                 if (tg.MainButton.isVisible) {
                     tg.MainButton.show();
                 }
@@ -54,7 +55,7 @@ document.getElementById("btn1").addEventListener("click", function () {
 document.getElementById("btn2").addEventListener("click", function () {
     toggleItem(this, "item2", 2000);
 });
-document.getElementById("btn3").addEventListener("click", function (){
+document.getElementById("btn3").addEventListener("click", function () {
     toggleItem(this, "item3", 2500);
 });
 document.getElementById("btn4").addEventListener("click", function () {
