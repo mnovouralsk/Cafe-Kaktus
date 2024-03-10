@@ -80,17 +80,42 @@
 </div>
 
 <script>
-fetch('products.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        const productsContainer = document.getElementById('products-container');
+    const loadJSON = (callback) => {
+        let xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', 'products.json', true);
+        // Replace 'my_data' with the path to your file
+        xobj.onreadystatechange = () => {
+            if (xobj.readyState === 4 && xobj.status === "200") {
+                // Required use of an anonymous callback
+                // as .open() will NOT return a value but simply returns undefined in asynchronous mode
+                callback(xobj.responseText);
+            }
+        };
+        xobj.send(null);
+    }
+let mydata;
+loadJSON((response) => {
+   mydata= JSON.parse(response);
+});
 
-        data.forEach(product => {
+// const init = () => {
+//     loadJSON((response) => {
+//         // Parse JSON string into object
+//         var mydata = JSON.parse(response);
+//     });
+// }
+// fetch('products.json')
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error(`HTTP error! status: ${response.status}`);
+//         }
+//         return response.json();
+//     })
+//     .then(data => {
+//         const productsContainer = document.getElementById('products-container');
+
+        mydata.forEach(product => {
             const productCard = document.createElement('div');
             productCard.className = 'product-card';
 
@@ -133,11 +158,11 @@ fetch('products.json')
                 }
             });
         });
-    })
-    .catch(error => {
-        console.error('There has been a problem with your fetch operation:', error);
-        // Your code to handle the error, such as displaying a message to the user
-    });
+    // })
+    // .catch(error => {
+    //     console.error('There has been a problem with your fetch operation:', error);
+    //     // Your code to handle the error, such as displaying a message to the user
+    // });
 </script>
 
 </body>
