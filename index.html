@@ -114,8 +114,10 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
+
     })
     .then(data => {
+        console.log(data);
 const productsContainer = document.getElementById('products-container');
 
         data.forEach(product => {
@@ -124,13 +126,13 @@ const productsContainer = document.getElementById('products-container');
 
             const productImage = document.createElement('img');
             productImage.className = 'product-image';
-            productImage.src = image;
+            productImage.src = data.image;
             productImage.alt = 'Product Image';
             productCard.appendChild(productImage);
 
             const productInfo = document.createElement('div');
             productInfo.className = 'product-info';
-            productInfo.innerHTML = '<h3>${name}</h3><p>Цена: $${price}</p>';
+            productInfo.innerHTML = '<h3>${data.name}</h3><p>Цена: $${data.price}</p>';
             productCard.appendChild(productInfo);
 
             const productQuantity = document.createElement('div');
