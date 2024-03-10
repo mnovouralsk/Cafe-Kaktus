@@ -1,26 +1,32 @@
 [
     {
-        "name": "Product 1",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.png",
-        "composition": "Espresso, Milk, Sugar",
-        "price": 10.99
+        "name": "Буррито с креветкой",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.jpg",
+        "composition": "Лепешка большая, креветка, салат Айсберг, огурец свежий, помидор, соус Ранч.- 215гр",
+        "price": 260
     },
     {
-        "name": "Product 2",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.png",
-        "composition": "Espresso, Milk, Sugar",
-        "price": 19.99
+        "name": "Цезарь Буррито",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/2.jpg",
+        "composition": "Хрустящие стрипсы, маринованные корнишоны, свежие томаты, хрустящий салат Айсберг, красный лук, нежный сыр, под соусом Цезарь, в ароматной лепешке. 300гр",
+        "price": 240
     },
     {
-        "name": "Product 3",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.png",
-        "composition": "Espresso, Milk, Sugar",
-        "price": 14.50
+        "name": "Эстрелла бургер",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/3.jpg",
+        "composition": "Лепешка средняя, котлета говяжья, сыр, салат Айсберг, помидор свежий, огурец маринованный, соус BBQ . - 180г",
+        "price": 180
     },
     {
-        "name": "ok 3",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.png",
-        "composition": "Espresso, Milk, Sugar",
-        "price": 14.50
+        "name": "Тако грибной с курицей",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/4.jpg",
+        "composition": "Копченая курица, лепешка тортилья, лук фри, шампиньоны салат Айсберг, огурец свежий, помидор свежий, сыр, соус Ранч. - 240г",
+        "price": 180
+    },
+    {
+        "name": "Сэндвич",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/5.jpg",
+        "composition": "Тостовый хлеб, копчёная курица, салат Айсберг, огурец свежий, соус Ранч. - 110г",
+        "price": 120
     }
 ]
