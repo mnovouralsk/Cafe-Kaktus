@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,76 +39,11 @@
 <body>
 <h1>Меню кафе Кактус</h1>
 <div id="products-container">
-    <!-- <div class="product-card">
-        <img class="product-image" src="https://via.placeholder.com/150" alt="Product Image">
-        <div class="product-info">
-            <h3>Название товара 1</h3>
-            <p>Цена: $10.00</p>
-        </div>
-        <div class="product-quantity">
-            <button class="add-btn">+</button>
-            <span class="quantity">0</span>
-            <button class="remove-btn">-</button>
-        </div>
-    </div>
 
-    <div class="product-card">
-        <img class="product-image" src="https://via.placeholder.com/150" alt="Product Image">
-        <div class="product-info">
-            <h3>Название товара 2</h3>
-            <p>Цена: $15.00</p>
-        </div>
-        <div class="product-quantity">
-            <button class="add-btn">+</button>
-            <span class="quantity">0</span>
-            <button class="remove-btn">-</button>
-        </div>
-    </div> -->
-
-    <!-- <div class="product-card">
-        <img class="product-image" src="https://via.placeholder.com/150" alt="Product Image">
-        <div class="product-info">
-            <h3>Название товара 3</h3>
-            <p>Цена: $20.00</p>
-        </div>
-        <div class="product-quantity">
-            <button class="add-btn">+</button>
-            <span class="quantity">0</span>
-            <button class="remove-btn">-</button>
-        </div>
-    </div> -->
 </div>
 
 <script>
-//     const loadJSON = (callback) => {
-//         let xobj = new XMLHttpRequest();
-//         xobj.overrideMimeType("application/json");
-//         xobj.open('GET', 'products.json', true);
-//         // Replace 'my_data' with the path to your file
-//         xobj.onreadystatechange = () => {
-//             if (xobj.readyState === 4 && xobj.status === "200") {
-//                 // Required use of an anonymous callback
-//                 // as .open() will NOT return a value but simply returns undefined in asynchronous mode
-//                 callback(xobj.responseText);
-//             }
-//         };
-//         xobj.send(null);
-//     }
-// let mydata;
-// loadJSON((response) => {
-//    mydata= JSON.parse(response);
-// });
-// console.log(mydata[0]);
-
-// console.log(mydata);
-
-// const init = () => {
-//     loadJSON((response) => {
-//         // Parse JSON string into object
-//         var mydata = JSON.parse(response);
-//     });
-// }
-fetch('products.json')
+fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -118,7 +53,7 @@ fetch('products.json')
     })
     .then(data => {
         console.log(data);
-const productsContainer = document.getElementById('products-container');
+        const productsContainer = document.getElementById('products-container');
 
         data.forEach(product => {
             const productCard = document.createElement('div');
@@ -132,7 +67,7 @@ const productsContainer = document.getElementById('products-container');
 
             const productInfo = document.createElement('div');
             productInfo.className = 'product-info';
-            productInfo.innerHTML = '<h3>'+product.name+'</h3><p>Цена: '+product.price+'</p>';
+            productInfo.innerHTML = '<p>'+product.composition+'</p><h3>'+product.name+'</h3><p>Цена: '+product.price+'</p>';
             productCard.appendChild(productInfo);
 
             const productQuantity = document.createElement('div');
@@ -166,7 +101,6 @@ const productsContainer = document.getElementById('products-container');
     })
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
-        // Your code to handle the error, such as displaying a message to the user
     });
 </script>
 
