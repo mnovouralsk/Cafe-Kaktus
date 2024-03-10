@@ -1,75 +1,70 @@
-let tg = window. Telegram.WebApp;
-let total = 0;
-
-tg.expand();
-tg.MainButton.textColor = '#FFFFFF';
-tg.MainButton.color = '#2cab37';
-let items = [];
-function toggleItem(btn, itemId, price) {
-    let item = items.find(i => i.id === itemId);
-    if (!item) {
-        let newItem = { id: itemId, price: price };
-        items.push(newItem);
-        btn.classList.add('added-to-cart');
-        btn.innerText = "удалить из корзины";
-        let totalPrice = items.reduce((total, item) => total + item.price, 0);
-        if (totalPrice > 0) {
-            tg.MainButton.setText('Общая цена товаров: ' + totalPrice);
-            if (!tg.MainButton.isVisible) {
-                tg. MainButton.show();
-            }
-        } else {
-            tg.MainButton.hide();
+fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
-    } else {
-        let index = items.indexOf(item);
-        items.splice(index, 1);
-        btn.classList.remove('added-to-cart');
-        btn.innerText = "Добавить в корзину";
-        let totalPrice = items.reduce((total, item) => total + item.price, 0);
-        if (totalPrice > 0) {
-            tg.MainButton.setText('Общая цена товаров: ' + totalPrice);
-                if (tg.MainButton.isVisible) {
-                    tg.MainButton.show();
+        return response.json();
+
+    })
+    .then(data => {
+        console.log(data);
+        const productsContainer = document.getElementById('products-container');
+
+        data.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+
+            const productTitle = document.createElement('h2');
+            productTitle.className = 'product-title';
+            productTitle.textContent = product.name;
+            productCard.appendChild(productImage);
+
+            const productImage = document.createElement('img');
+            productImage.className = 'product-image';
+            productImage.src = product.image;
+            productImage.alt = 'Product Image';
+            productCard.appendChild(productImage);
+
+            const productInfo = document.createElement('div');
+            productInfo.className = 'product-info';
+            productInfo.innerHTML = '<p>'+product.composition+'</p><p class="product-price">Цена: '+product.price+'</p>';
+            productCard.appendChild(productInfo);
+
+            const productQuantity = document.createElement('div');
+            productQuantity.className = 'product-quantity';
+            productQuantity.innerHTML = '<button class="add-btn">+</button><span class="quantity"></span><button class="remove-btn">-</button>';
+
+            productCard.appendChild(productQuantity);
+
+            productsContainer.appendChild(productCard);
+        });
+
+        const addBtns = document.querySelectorAll('.add-btn');
+        const removeBtns = document.querySelectorAll('.remove-btn');
+        const quantities = document.querySelectorAll('.quantity');
+
+
+        addBtns.forEach((btn, index) => {
+            quantities[index].textContent = "0";
+
+            btn.addEventListener('click', () => {
+                if (parseInt(quantities[index].textContent) === ''){
+                    quantities[index].textContent = "0";
                 }
-        } else {
-            tg.MainButton.hide();
-        }
-    }
-}
+                let currentQuantity = parseInt(quantities[index].textContent);
+                quantities[index].textContent = Number(currentQuantity) + 1;
+            });
+        });
 
-Telegram.WebApp.onEvent("mainButtonClicked", function() {
-    let data = {
-        items: items,
-        totalPrice: calculateTotalPrice()
-    };
-    tg.sendData(JSON.stringify(data));
-});
-function calculateTotalPrice () {
-    return items.reduce((total, item) => total + item.price, 0);
-}
-
-document.getElementById("btn1").addEventListener("click", function () {
-    toggleItem(this, "item1", 1500);
-});
-document.getElementById("btn2").addEventListener("click", function () {
-    toggleItem(this, "item2", 2000);
-});
-document.getElementById("btn3").addEventListener("click", function () {
-    toggleItem(this, "item3", 2500);
-});
-document.getElementById("btn4").addEventListener("click", function () {
-    toggleItem(this, "item4", 2200);
-});
-document.getElementById("btn5").addEventListener("click", function () {
-    toggleItem(this, "item5", 2100);
-});
-document.getElementById("btn6").addEventListener("click", function () {
-    toggleItem(this, "item6", 5000);
-});
-document.getElementById("btn7").addEventListener("click", function () {
-    toggleItem(this, "item7", 6000);
-});
-document.getElementById("btn8").addEventListener("click", function () {
-    toggleItem(this, "item8", 1600);
-});
+        removeBtns.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                let currentQuantity = parseInt(quantities[index].textContent);
+                if (currentQuantity > 0) {
+                    quantities[index].textContent = currentQuantity - 1;
+                }
+            });
+        });
+    })
+    .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+    });
