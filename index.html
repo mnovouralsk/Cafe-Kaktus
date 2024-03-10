@@ -34,6 +34,35 @@
         width: 100%;
         height: auto;
     }
+
+    .product-quantity {
+        min-height: 40px;
+    }
+
+    .add-btn, .remove-btn {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        padding: 5px 10px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+        margin-right: 5px;
+    }
+
+    .add-btn:hover,
+    .remove-btn:hover {
+        background-color: #2980b9;
+    }
+
+    .quantity {
+        display: inline-block;
+        margin-right: 20px;
+        margin-left: 20px;
+        font-weight: bold;
+    }
 </style>
 </head>
 <body>
@@ -83,10 +112,16 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
         const removeBtns = document.querySelectorAll('.remove-btn');
         const quantities = document.querySelectorAll('.quantity');
 
+
         addBtns.forEach((btn, index) => {
+            quantities[index].textContent = "0";
+
             btn.addEventListener('click', () => {
+                if (parseInt(quantities[index].textContent) === ''){
+                    quantities[index].textContent = "0";
+                }
                 let currentQuantity = parseInt(quantities[index].textContent);
-                quantities[index].textContent = currentQuantity + 1;
+                quantities[index].textContent = Number(currentQuantity) + 1;
             });
         });
 
