@@ -2,26 +2,25 @@
     {
         "name": "Product 1",
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.png",
+        "composition": "Espresso, Milk, Sugar",
         "price": 10.99
     },
     {
         "name": "Product 2",
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.png",
+        "composition": "Espresso, Milk, Sugar",
         "price": 19.99
     },
     {
         "name": "Product 3",
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.png",
+        "composition": "Espresso, Milk, Sugar",
         "price": 14.50
     },
     {
-        "name": "Product 4",
+        "name": "ok 3",
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.png",
-        "price": 14.50
-    },
-    {
-        "name": "Product 5",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.png",
+        "composition": "Espresso, Milk, Sugar",
         "price": 14.50
     }
 ]
