@@ -62,7 +62,8 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
                 let currentQuantity = parseInt(quantities[index].textContent);
                 quantities[index].textContent = Number(currentQuantity) + 1;
                 total += Number(js[index]);
-                console.log(total);
+                tg.MainButton.setText('Общая цена товаров: ' + total);
+                // console.log(total);
             });
         });
 
@@ -72,7 +73,8 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
                 if (currentQuantity > 0) {
                     quantities[index].textContent = currentQuantity - 1;
                     total -= Number(js[index]);
-                    console.log(total);
+                    tg.MainButton.setText('Общая цена товаров: ' + total);
+                    // console.log(total);
                 }
             });
         });
