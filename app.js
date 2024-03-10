@@ -4,7 +4,7 @@ let total = 0;
 tg.expand();
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
-
+let js = [];
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
     .then(response => {
         if (!response.ok) {
@@ -35,6 +35,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
             const productInfo = document.createElement('div');
             productInfo.className = 'product-info';
             productInfo.innerHTML = '<p>'+product.composition+'</p><p class="product-price">Цена: '+product.price+'</p>';
+            js.push(product.price);
             productCard.appendChild(productInfo);
 
             const productQuantity = document.createElement('div');
@@ -60,7 +61,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
                 }
                 let currentQuantity = parseInt(quantities[index].textContent);
                 quantities[index].textContent = Number(currentQuantity) + 1;
-                total += Number(product.price);
+                total += Number(js[index]);
                 console.log(total);
             });
         });
@@ -70,7 +71,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
                 let currentQuantity = parseInt(quantities[index].textContent);
                 if (currentQuantity > 0) {
                     quantities[index].textContent = currentQuantity - 1;
-                    total -= Number(product.price);
+                    total -= Number(js[index]);
                     console.log(total);
                 }
             });
