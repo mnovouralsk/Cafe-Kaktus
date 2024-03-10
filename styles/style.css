@@ -39,7 +39,7 @@ body {
 
 .add-btn, .remove-btn {
     display: inline-block;
-    width: 70px;
+    width: 60px;
     height: 50px;
     padding: 5px 10px;
     background-color: #3498db;
@@ -59,8 +59,8 @@ body {
 
 .quantity {
     display: inline-block;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
     font-weight: bold;
     font-size: 24px;
 }
