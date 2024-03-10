@@ -1,3 +1,10 @@
+let tg = window.Telegram.WebApp;
+let total = 0;
+
+tg.expand();
+tg.MainButton.textColor = '#FFFFFF';
+tg.MainButton.color = '#2cab37';
+
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
     .then(response => {
         if (!response.ok) {
@@ -53,6 +60,8 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
                 }
                 let currentQuantity = parseInt(quantities[index].textContent);
                 quantities[index].textContent = Number(currentQuantity) + 1;
+                total += Number(product.price);
+                console.log(total);
             });
         });
 
@@ -61,10 +70,21 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
                 let currentQuantity = parseInt(quantities[index].textContent);
                 if (currentQuantity > 0) {
                     quantities[index].textContent = currentQuantity - 1;
+                    total -= Number(product.price);
+                    console.log(total);
                 }
             });
         });
+        tg. MainButton.show();
     })
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
     });
+
+Telegram.WebApp.onEvent("mainButtonClicked", function() {
+    let data = {
+        items: items,
+        totalPrice: calculateTotalPrice()
+    };
+    tg.sendData(JSON.stringify(data));
+});
