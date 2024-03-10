@@ -15,7 +15,12 @@
         "price": 14.50
     },
     {
-        "name": "ok 3",
+        "name": "Product 4",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.png",
+        "price": 14.50
+    },
+    {
+        "name": "Product 5",
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.png",
         "price": 14.50
     }
