@@ -1,143 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Карточки товаров</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-size: 18px;
-        color: var(--tg-theme-text-color);
-        background: var(--tg-theme-bg-color);
-        text-align: center;
-    }
-
-    .h1 {
-        margin-top: 20px;
-    }
-
-    #products-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .product-card {
-        width: 45%;
-        margin: 3px;
-        padding: 3px;
-    }
-
-    .product-image {
-        width: 100%;
-        height: auto;
-    }
-
-    .product-quantity {
-        min-height: 40px;
-    }
-
-    .add-btn, .remove-btn {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        padding: 5px 10px;
-        background-color: #3498db;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        border-radius: 3px;
-        margin-right: 5px;
-    }
-
-    .add-btn:hover,
-    .remove-btn:hover {
-        background-color: #2980b9;
-    }
-
-    .quantity {
-        display: inline-block;
-        margin-right: 20px;
-        margin-left: 20px;
-        font-weight: bold;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточки товаров</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-<h1>Меню кафе Кактус</h1>
-<div id="products-container">
+    <h1>Меню кафе Кактус</h1>
+    <div id="products-container">
 
-</div>
-
-<script>
-fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-
-    })
-    .then(data => {
-        console.log(data);
-        const productsContainer = document.getElementById('products-container');
-
-        data.forEach(product => {
-            const productCard = document.createElement('div');
-            productCard.className = 'product-card';
-
-            const productImage = document.createElement('img');
-            productImage.className = 'product-image';
-            productImage.src = product.image;
-            productImage.alt = 'Product Image';
-            productCard.appendChild(productImage);
-
-            const productInfo = document.createElement('div');
-            productInfo.className = 'product-info';
-            productInfo.innerHTML = '<p>'+product.composition+'</p><h3>'+product.name+'</h3><p>Цена: '+product.price+'</p>';
-            productCard.appendChild(productInfo);
-
-            const productQuantity = document.createElement('div');
-            productQuantity.className = 'product-quantity';
-            productQuantity.innerHTML = '<button class="add-btn">+</button><span class="quantity"></span><button class="remove-btn">-</button>';
-
-            productCard.appendChild(productQuantity);
-
-            productsContainer.appendChild(productCard);
-        });
-
-        const addBtns = document.querySelectorAll('.add-btn');
-        const removeBtns = document.querySelectorAll('.remove-btn');
-        const quantities = document.querySelectorAll('.quantity');
-
-
-        addBtns.forEach((btn, index) => {
-            quantities[index].textContent = "0";
-
-            btn.addEventListener('click', () => {
-                if (parseInt(quantities[index].textContent) === ''){
-                    quantities[index].textContent = "0";
-                }
-                let currentQuantity = parseInt(quantities[index].textContent);
-                quantities[index].textContent = Number(currentQuantity) + 1;
-            });
-        });
-
-        removeBtns.forEach((btn, index) => {
-            btn.addEventListener('click', () => {
-                let currentQuantity = parseInt(quantities[index].textContent);
-                if (currentQuantity > 0) {
-                    quantities[index].textContent = currentQuantity - 1;
-                }
-            });
-        });
-    })
-    .catch(error => {
-        console.error('There has been a problem with your fetch operation:', error);
-    });
-</script>
-
+    </div>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script> I
+    <script src="app.js"></script>
 </body>
 </html>
