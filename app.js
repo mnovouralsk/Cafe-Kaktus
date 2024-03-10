@@ -17,7 +17,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
             const productTitle = document.createElement('h2');
             productTitle.className = 'product-title';
             productTitle.textContent = product.name;
-            productCard.appendChild(productImage);
+            productCard.appendChild(productTitle);
 
             const productImage = document.createElement('img');
             productImage.className = 'product-image';
