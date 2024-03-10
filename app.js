@@ -32,7 +32,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
 
             const productQuantity = document.createElement('div');
             productQuantity.className = 'product-quantity';
-            productQuantity.innerHTML = '<button class="add-btn">+</button><span class="quantity"></span><button class="remove-btn">-</button>';
+            productQuantity.innerHTML = '<button class="remove-btn">-</button><span class="quantity"></span><button class="add-btn">+</button>';
 
             productCard.appendChild(productQuantity);
 
