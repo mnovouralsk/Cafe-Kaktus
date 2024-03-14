@@ -4,7 +4,7 @@ let total = 0;
 tg.expand();
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
-let js = [];
+let items = [];
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
     .then(response => {
         if (!response.ok) {
@@ -35,12 +35,14 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
             const productInfo = document.createElement('div');
             productInfo.className = 'product-info';
             productInfo.innerHTML = '<p>'+product.composition+'</p><p class="product-price">Цена: '+product.price+'</p>';
-            js.push(product.price);
+
             productCard.appendChild(productInfo);
 
             const productQuantity = document.createElement('div');
             productQuantity.className = 'product-quantity';
             productQuantity.innerHTML = '<button class="remove-btn">-</button><span class="quantity"></span><button class="add-btn">+</button>';
+
+            items.push([product.name, product.price, 0]); //название, цена, количество
 
             productCard.appendChild(productQuantity);
 
@@ -50,10 +52,11 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
         const addBtns = document.querySelectorAll('.add-btn');
         const removeBtns = document.querySelectorAll('.remove-btn');
         const quantities = document.querySelectorAll('.quantity');
+        const info = document.querySelectorAll('.product-info >p:nth-child(2)');
 
 
         addBtns.forEach((btn, index) => {
-            quantities[index].textContent = "0";
+            // quantities[index].textContent = "0";
 
             btn.addEventListener('click', () => {
                 if (parseInt(quantities[index].textContent) === ''){
@@ -61,19 +64,24 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
                 }
                 let currentQuantity = parseInt(quantities[index].textContent);
                 quantities[index].textContent = Number(currentQuantity) + 1;
-                total += Number(js[index]);
-                tg.MainButton.setText('Общая цена товаров: ' + total);
+                items[index][2] = quantities[index].textContent;
+                info.textContent = items[index];
+                total += Number(items[index][1]);
+                tg.MainButton.setText('Заказать на сумму: ' + total + ' руб');
                 // console.log(total);
             });
         });
 
         removeBtns.forEach((btn, index) => {
+            quantities[index].textContent = "0";
+
             btn.addEventListener('click', () => {
                 let currentQuantity = parseInt(quantities[index].textContent);
                 if (currentQuantity > 0) {
-                    quantities[index].textContent = currentQuantity - 1;
-                    total -= Number(js[index]);
-                    tg.MainButton.setText('Общая цена товаров: ' + total);
+                    quantities[index].textContent = Number(currentQuantity) - 1;
+                    items[index][2] = quantities[index].textContent;
+                    total -= Number(items[index][1]);
+                    tg.MainButton.setText('Заказать на сумму: ' + total + ' руб');
                     // console.log(total);
                 }
             });
@@ -87,7 +95,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
     let data = {
         items: items,
-        totalPrice: calculateTotalPrice()
+        totalPrice: total
     };
     tg.sendData(JSON.stringify(data));
 });
