@@ -11,6 +11,12 @@ body {
     margin-top: 20px;
 }
 
+.product-info {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
 #products-container {
     display: flex;
     flex-wrap: wrap;
@@ -21,6 +27,20 @@ body {
     width: 45%;
     margin: 3px;
     padding: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    display: none;
+}
+
+.product-card.active {
+    display: block;
+    width: 45%;
+    margin: 3px;
+    padding: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
 }
 
 .product-image {
@@ -39,8 +59,8 @@ body {
 
 .add-btn, .remove-btn {
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #3498db;
@@ -64,4 +84,49 @@ body {
     margin-left: 15px;
     font-weight: bold;
     font-size: 24px;
+}
+
+.menu-categories {
+    background-color: #0078D7;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-categories ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-categories li {
+    margin-right: 15px;
+}
+
+.menu-categories a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    position: relative;
+}
+
+.menu-categories a:hover {
+    background-color: #005A9C;
+}
+
+.menu-categories a:hover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
 }
