@@ -14,6 +14,7 @@ body {
 }
 
 #products-container {
+    margin-top: 120px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -26,7 +27,7 @@ body {
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
-    display: none;
+    display: block;
 }
 
 .product-card.active {
@@ -84,17 +85,17 @@ body {
 
 .menu-categories {
     background-color: #0078D7;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 10px; */
+    /* border-radius: 5px; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
   }
 
-  .menu-categories ul {
+.menu-categories ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -102,25 +103,33 @@ body {
     justify-content: center;
   }
 
-  .menu-categories li {
-    margin-right: 15px;
+.menu-categories li {
+    max-width: 120px;
+    /* padding: 10px; */
+    /* margin-right: 15px; */
     flex-basis: 100%;
-  }
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-categories li:hover {
+    background-color: #005A9C;
+}
 
   .menu-categories a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
     padding: 5px 10px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     transition: background-color 0.3s;
     display: block;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center left;
-    background-size: 40px;
+    /* background-size: 40px; */
 }
-
+/*
 .menu-categories a span {
     display: inline-block;
     margin-left: 50px;
@@ -128,7 +137,7 @@ body {
 
 .menu-categories a:hover {
     background-color: #005A9C;
-}
+} */
 
 /* .menu-categories a:hover:before {
     content: "";
