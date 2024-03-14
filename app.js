@@ -93,8 +93,14 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
     });
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
+    let js = [];
+    for (let i=0;i<items.length;i++){
+        if (items[i][2] > 0){
+            js.push(items[i]);
+        }
+    }
     let data = {
-        items: items,
+        items: js,
         totalPrice: total
     };
     tg.sendData(JSON.stringify(data));
