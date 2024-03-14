@@ -88,21 +88,23 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
         });
 
         const categoryBtns = document.querySelectorAll('.category-btn');
-        const productCards = document.querySelectorAll('.product-card');
 
         categoryBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                console.log("Категория: " + btn.dataset.category);
                 const category = btn.dataset.category;
-                productCards.forEach(card => {
-                    if (card.classList.contains(category)) {
-                        card.classList.add('active');
+                categoryBtns.forEach(btn => btn.classList.remove('active'));
+                btn.classList.add('active');
+                const products = document.querySelectorAll('.product-card');
+                products.forEach(product => {
+                    if (product.classList.contains(category)) {
+                        product.style.display = 'block';
                     } else {
-                        card.classList.remove('active');
+                        product.style.display = 'none';
                     }
                 });
             });
         });
+
         tg. MainButton.show();
     })
     .catch(error => {
