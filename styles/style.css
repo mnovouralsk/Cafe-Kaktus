@@ -113,8 +113,8 @@ body {
 .menu-categories li {
     display: flex;
     justify-content: center;
-    max-width: 80px;
-    max-height: 70px;
+    width: 10px;
+    /* height: 70px; */
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
