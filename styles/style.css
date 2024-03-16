@@ -111,9 +111,9 @@ body {
 }
 
 .menu-categories li {
-    display: flex;
-    justify-content: center;
-    width: 10px;
+    /* display: flex; */
+    /* justify-content: center; */
+    width: 100%;
     /* height: 70px; */
     font-size: 12px;
     font-weight: bold;
