@@ -5,6 +5,15 @@ tg.expand();
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 let items = [];
+
+var menu = document.getElementById('menu');
+var myScroll = new IScroll(menu, {
+    scrollX: true,
+    scrollY: false,
+    mouseWheel: true,
+    click: true
+});
+
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
     .then(response => {
         if (!response.ok) {
@@ -21,7 +30,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
             const productCard = document.createElement('div');
             productCard.className = 'product-card ' + product.category;
             console.log(product.category);
-            const productTitle = document.createElement('h2');
+            const productTitle = document.createElement('h3');
             productTitle.className = 'product-title';
             productTitle.textContent = product.name;
             productCard.appendChild(productTitle);
