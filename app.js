@@ -6,6 +6,15 @@ tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 let items = [];
 
+const scrollContainer = document.querySelector('.scroll-container');
+const myScroll = new IScroll(scrollContainer, {
+  scrollX: true, // Set to true for horizontal scrolling
+  scrollY: false, // Set to true for vertical scrolling
+  mouseWheel: false, // Enable mouse wheel scrolling
+  click: true, // Enable click events within the scroller
+  interactiveScrollbars: true, // Enable interactive scrollbars
+});
+
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
     .then(response => {
         if (!response.ok) {
