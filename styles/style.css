@@ -70,15 +70,22 @@ body {
     height: auto;
 }
 
-.product-info {
+.product-composition {
     margin: 0;
-    margin-top: -10px;
+    margin-top: -13px;
     padding: 0;
     font-size: 14px;
 }
 
+.product-info {
+    margin: 0;
+    margin-top: -13px;
+    padding: 0;
+}
+
 .product-price {
     margin: 0;
+    margin-top: -13px;
     padding: 0;
     font-weight: bold;
     font-size: 16px;
