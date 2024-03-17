@@ -6,13 +6,16 @@ tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 let items = [];
 
+
 var menu = document.getElementById('menu');
-var myScroll = new IScroll(menu, {
+function loaded() {
+    var myScroll = new IScroll(menu, {
     scrollX: true,
     scrollY: false,
     mouseWheel: true,
     click: true
-});
+    });
+}
 
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
     .then(response => {
