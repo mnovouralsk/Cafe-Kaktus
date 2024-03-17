@@ -4,6 +4,7 @@ let total = 0;
 tg.expand();
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
+tg.MainButton.textContent = 'Заказать';
 let items = [];
 
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
@@ -21,23 +22,28 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
         data.forEach(product => {
             const productCard = document.createElement('div');
             productCard.className = 'product-card ' + product.category;
-            console.log(product.category);
-            const productTitle = document.createElement('h3');
-            productTitle.className = 'product-title';
-            productTitle.textContent = product.name;
-            productCard.appendChild(productTitle);
+            // console.log(product.category);
+            const productImg = document.createElement('div');
+            productImg.className = 'product-img';
 
             const productImage = document.createElement('img');
             productImage.className = 'product-image';
             productImage.src = product.image;
             productImage.alt = 'Product Image';
-            productCard.appendChild(productImage);
+            productImg.appendChild(productImage);
+
+            const productData = document.createElement('div');
+            productData.className = 'product-data';
+
+            const productTitle = document.createElement('h3');
+            productTitle.className = 'product-title';
+            productTitle.textContent = product.name;
+            productData.appendChild(productTitle);
 
             const productInfo = document.createElement('div');
             productInfo.className = 'product-info';
             productInfo.innerHTML = '<p>'+product.composition+'</p><p class="product-price">Цена: '+product.price+'</p>';
-
-            productCard.appendChild(productInfo);
+            productData.appendChild(productInfo);
 
             const productQuantity = document.createElement('div');
             productQuantity.className = 'product-quantity';
@@ -45,8 +51,10 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
 
             items.push([product.name, product.price, 0]); //название, цена, количество
 
-            productCard.appendChild(productQuantity);
+            productData.appendChild(productQuantity);
 
+            productCard.appendChild(productImg);
+            productCard.appendChild(productData);
             productsContainer.appendChild(productCard);
         });
 
@@ -57,8 +65,6 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
 
 
         addBtns.forEach((btn, index) => {
-            // quantities[index].textContent = "0";
-
             btn.addEventListener('click', () => {
                 if (parseInt(quantities[index].textContent) === ''){
                     quantities[index].textContent = "0";
