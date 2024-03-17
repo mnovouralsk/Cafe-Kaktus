@@ -49,7 +49,7 @@ body {
 
 .product-data {
     display: inline-block;
-    width: calc(100vw - 139px);
+    width: calc(100vw - 129px);
     height: fit-content;
     margin: 0;
     margin-left: 10px;
