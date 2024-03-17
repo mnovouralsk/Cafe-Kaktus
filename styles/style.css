@@ -115,9 +115,9 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     margin: 0;
-    background-color: #d40071;
+    background-color: #0db447;
     color: #fff;
-    border:azure;
+    /* border:azure; */
     cursor: pointer;
     border-radius: 3px;
     font-size: 14px;
@@ -133,7 +133,7 @@ body {
 }
 
 .menu-categories {
-    background-color: #d40071;
+    background-color: #0db447;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;

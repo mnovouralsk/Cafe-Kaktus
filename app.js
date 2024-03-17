@@ -3,7 +3,7 @@ let total = 0;
 
 tg.expand();
 tg.MainButton.textColor = '#FFFFFF';
-tg.MainButton.color = '#2cab37';
+tg.MainButton.color = '#0db447';
 let items = [];
 
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
