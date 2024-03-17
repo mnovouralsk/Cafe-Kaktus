@@ -117,7 +117,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
         });
 
         tg.MainButton.show();
-        tg.MainButton.textContent = 'Заказать';
+        tg.MainButton.setText = 'Заказать';
     })
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
