@@ -35,7 +35,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
             const productData = document.createElement('div');
             productData.className = 'product-data';
 
-            const productTitle = document.createElement('h6');
+            const productTitle = document.createElement('p');
             productTitle.className = 'product-title';
             productTitle.textContent = product.name;
             productData.appendChild(productTitle);
