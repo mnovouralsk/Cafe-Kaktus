@@ -45,10 +45,10 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
             productComposition.textContent = product.composition;
             productData.appendChild(productComposition);
 
-            const productInfo = document.createElement('div');
-            productInfo.className = 'product-info';
-            productInfo.innerHTML = '<p class="product-price">Цена: '+product.price+'</p>';
-            productData.appendChild(productInfo);
+            // const productInfo = document.createElement('div');
+            // productInfo.className = 'product-info';
+            // productInfo.innerHTML = '<p class="product-price">Цена: '+product.price+'</p>';
+            // productData.appendChild(productInfo);
 
             const productQuantity = document.createElement('div');
             productQuantity.className = 'product-quantity';
