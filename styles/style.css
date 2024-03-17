@@ -7,43 +7,61 @@ body {
     text-align: center;
 }
 
-.product-info {
-    margin: 0;
-    padding: 0;
-    font-size: 12px;
-}
-
 #products-container {
     display: block;
-    margin-top: 120px;
-    width: 100vW;
+    margin-top: 70px;
+    width: 100vW-5px;
     /* flex-wrap: wrap; */
     /* justify-content: space-around; */
 }
 
 .product-card {
-    width: 45%;
-    margin: 3px;
-    padding: 3px;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
     display: block;
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    text-align: left;
 }
 
 .product-card.active {
     display: block;
-    width: 45%;
-    margin: 3px;
-    padding: 3px;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
     border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
+    text-align: left;
+}
+
+.product-img {
+    display: inline-block;
+    /* text-align: left; */
+    width: 40% !important;
+    height: auto;
+    margin: 15px;
+    /* border-radius: 15px; */
+}
+
+.product-data {
+    display: inline-block;
+    margin: 15px;
+    text-align: left;
+    vertical-align: top;
 }
 
 .product-image {
     width: 100%;
     height: auto;
+}
+
+.product-info {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
 }
 
 .product-price {
@@ -52,30 +70,24 @@ body {
 }
 
 .product-quantity {
-    min-height: 40px;
     display: flex;
+    min-height: 40px;
     align-items: center;
     justify-content: center;
 }
 
 .add-btn, .remove-btn {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 35px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #3498db;
+    background-color: #d40071;
     color: #fff;
     border:azure;
     cursor: pointer;
     border-radius: 3px;
-    margin-right: 5px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
-}
-
-.add-btn:hover,
-.remove-btn:hover {
-    background-color: #2980b9;
 }
 
 .quantity {
@@ -139,7 +151,7 @@ body {
     text-align: center;
     width: calc((100vw - 128px) / 7);
     max-width: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 span {
     display: block;
