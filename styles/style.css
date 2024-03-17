@@ -100,6 +100,8 @@ body {
     /* padding-right: 5px; */
     z-index: 999;
     width: 100%;
+    overflow: hidden;
+    position: relative;
   }
 
 .menu-categories ul {
@@ -113,8 +115,6 @@ body {
     /* margin-left: 10px; */
     /* margin-right: 10px; */
     /* flex-wrap: wrap; */
-    overflow: hidden;
-    position: relative;
 }
 
 .menu-categories li {
