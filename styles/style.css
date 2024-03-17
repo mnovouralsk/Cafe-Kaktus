@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Arial Narrow";
     font-weight: 400;
-    src: url("fonts/arialnarrow.ttf");
+    src: url("../fonts/arialnarrow.ttf");
 }
 
 body {
