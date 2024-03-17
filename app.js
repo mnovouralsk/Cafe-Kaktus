@@ -6,7 +6,7 @@ tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 let items = [];
 
-const scrollContainer = document.querySelector('.scroll-container');
+const scrollContainer = document.querySelector('.menu-categories .scroll-container');
 const myScroll = new IScroll(scrollContainer, {
   scrollX: true, // Set to true for horizontal scrolling
   scrollY: false, // Set to true for vertical scrolling
@@ -14,6 +14,20 @@ const myScroll = new IScroll(scrollContainer, {
   click: true, // Enable click events within the scroller
   interactiveScrollbars: true, // Enable interactive scrollbars
 });
+
+menuScrollContainer.addEventListener('touchstart', function (e) {
+    const touch = e.touches[0];
+    menuScroll.x = touch.pageX;
+});
+
+menuScrollContainer.addEventListener('touchmove', function (e) {
+    if (!menuScroll.enabled) return;
+    e.preventDefault();
+    const touch = e.touches[0];
+    const deltaX = touch.pageX - menuScroll.x;
+    menuScroll.x = touch.pageX;
+    menuScroll.scrollTo(menuScroll.x + deltaX, 0);
+  });
 
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
     .then(response => {
