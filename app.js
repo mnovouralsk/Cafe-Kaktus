@@ -4,7 +4,6 @@ let total = 0;
 tg.expand();
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
-tg.MainButton.textContent = 'Заказать';
 let items = [];
 
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
@@ -117,7 +116,8 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
             });
         });
 
-        tg. MainButton.show();
+        tg.MainButton.show();
+        tg.MainButton.textContent = 'Заказать';
     })
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
@@ -125,7 +125,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
     let js = [];
-    for (let i=0;i<items.length;i++){
+    for (let i = 0; i < items.length; i++){
         if (items[i][2] > 0){
             js.push(items[i]);
         }
