@@ -78,11 +78,18 @@ body {
     height: auto;
 }
 
-.product-info {
+/* .product-info {
+    margin: 0;
+    margin-top: -20px;
+    padding: 0;
+    font-size: 8px;
+} */
+
+.product-composition {
     margin: 0;
     margin-top: -10px;
     padding: 0;
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .product-price {
@@ -98,7 +105,7 @@ body {
 .product-quantity {
     display: flex;
     margin: 0;
-    margin-top: -5px;
+    margin-top: -10px;
     padding: 0;
     min-height: 40px;
     align-items: center;
