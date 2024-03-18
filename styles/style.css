@@ -80,9 +80,9 @@ body {
 
 .product-info {
     margin: 0;
-    margin-top: -5px;
+    margin-top: -10px;
     padding: 0;
-    font-size: 14px;
+    font-size: 11px;
 }
 
 .product-price {
@@ -164,9 +164,9 @@ body {
     font-size: 10px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-right: 3px;
-    margin-left: 3px;
-    transition: all 0.3s ease-in-out;
+    margin-right: 4px;
+    margin-left: 4px;
+    /* transition: all 0.3s ease-in-out; */
 }
 
 .menu-categories a {
