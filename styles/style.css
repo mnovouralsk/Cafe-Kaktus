@@ -47,7 +47,6 @@ body {
 
 .product-img {
     display: inline-block;
-    text-align: center;
     width: 100px;
     height: auto;
     margin: 0;
@@ -74,6 +73,7 @@ body {
 }
 
 .product-image {
+    text-align: center;
     width: 100%;
     height: auto;
 }
@@ -87,7 +87,6 @@ body {
 
 .product-composition {
     margin: 0;
-    margin-top: -2px;
     padding: 0;
     font-size: 14px;
 }
