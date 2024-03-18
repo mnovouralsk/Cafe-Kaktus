@@ -78,6 +78,7 @@ body {
 
 .product-price {
     margin: 0;
+    margin-right: 10px;
     padding: 0;
     background: -webkit-linear-gradient(90deg, #ffde7a,#ffba52,#ffa05c);
     background: linear-gradient(90deg, #ffde7a,#ffba52,#ffa05c);
@@ -101,7 +102,7 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     margin: 0;
-    background-color: #d40071;
+    background-color: #166D3B;
     color: #fff;
     border:azure;
     cursor: pointer;
