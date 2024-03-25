@@ -16,7 +16,7 @@
     border: 0;
     outline: 0;
     text-transform: capitalize;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'ArialNarrow', sans-serif;
 }
 html {
   font-size: 62.5%;
@@ -51,8 +51,8 @@ body {
 }
 
 .product-image {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 5px;
 }
