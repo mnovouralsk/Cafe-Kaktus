@@ -57,12 +57,13 @@ body {
 }
 
 .product-card.active {
+  display: flex;
     /* display: flex; */
     /* width: calc(100vw - 35px); */
     width: 100vw;
     height: fit-content;
     margin: 5px 0px;
-    padding: 10px 0px;
+    padding: 10px;
     background: rgb(235, 250, 235);
     /* border: 1px solid #ccc; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -121,8 +122,8 @@ body {
     margin: 0;
     margin-right: 10px;
     padding: 0;
-    background: -webkit-linear-gradient(90deg, #ffde7a,#ffba52,#ffa05c);
-    background: linear-gradient(90deg, #ffde7a,#ffba52,#ffa05c);
+    /* background: -webkit-linear-gradient(90deg, #ffde7a,#ffba52,#ffa05c); */
+    /* background: linear-gradient(90deg, #ffde7a,#ffba52,#ffa05c); */
     font-weight: bold;
     font-size: 16px;
 }
