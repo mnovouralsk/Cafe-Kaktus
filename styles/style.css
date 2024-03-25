@@ -15,7 +15,7 @@
     list-style: none;
     border: 0;
     outline: 0;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-family: 'ArialNarrow', sans-serif;
 }
 html {
@@ -55,6 +55,7 @@ body {
 
 .product-details {
   flex: 1;
+  margin-left: 10px;
 }
 
 .product-name {
