@@ -5,58 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Карточки товаров</title>
     <link rel="stylesheet" href="styles/style.css">
+
+    <!-- font link -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <!-- fontawesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
-<body">
-    <div class="menu-categories">
+<body>
+  <header>
+    <input type="checkbox" id="menu">
+    <label for="menu">
+        <i class="fas fa-bars"></i>
+        <i class="fa fa-times"></i>
+    </label>
+    <nav class="navbar">
         <ul>
-          <li>
-            <a href="#" class="category-btn" data-category="category-1">
-                <img src="image/menu_buritto.png" alt="Pizza Icon">
-                <span>Тортилья</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-btn" data-category="category-2">
-                <img src="image/menu_sandwich.png" alt="Pizza Icon">
-                <span>Сэндвич</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-btn" data-category="category-3">
-                <img src="image/menu_comida.png" alt="Pizza Icon">
-                <span>Комида</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-btn" data-category="category-4">
-                <img src="image/menu_free.png" alt="Pizza Icon">
-                <span>Фри</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-btn" data-category="category-5">
-                <img src="image/menu_sous.png" alt="Pizza Icon">
-                <span>Соус</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-btn" data-category="category-5">
-                <img src="image/menu_desert.png" alt="Pizza Icon">
-                <span>Десерт</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="category-btn" data-category="category-5">
-                <img src="image/menu_kofe.png" alt="Pizza Icon">
-                <span>Напитки</span>
-            </a>
-          </li>
+            <li><a href="#home" class="category-btn" data-category="category-1">Тортилья</a></li>
+            <li><a href="#about" class="category-btn" data-category="category-2"> Сэндвич</a></li>
+            <li><a href="#services" class="category-btn" data-category="category-3">Комида</a></li>
+            <li><a href="#projects" class="category-btn" data-category="category-4">Фри</a></li>
+            <li><a href="#contacts" class="category-btn" data-category="category-5">Соус</a></li>
+            <li><a href="#contacts" class="category-btn" data-category="category-6">Десерт</a></li>
+            <li><a href="#contacts" class="category-btn" data-category="category-7">Напитки</a></li>
         </ul>
-      </div>
+    </nav>
+</header>
+  <div id="products-container">
 
-    <div id="products-container">
-
-    </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script> I
     <script src="app.js"></script>
 </body>
