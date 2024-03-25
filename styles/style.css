@@ -26,140 +26,93 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
-  background: #222;
   color: var(--tg-theme-text-color);
   background: var(--tg-theme-bg-color);
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
+  /* text-align: center; */
+  /* font-family: 'Poppins', sans-serif; */
 }
 
 #products-container {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background-color: rgb(255, 255, 255);
-
+  /* position: relative; */
+  width: 100%;
+  min-height: 100vh;
+  /* background-color: rgb(255, 255, 255); */
 }
 
 .product-card {
-    display: flex;
-    /* width: calc(100vw - 35px); */
-    width: 100vw;
-    height: fit-content;
-    margin: 5px 0px;
-    padding: 10px;
-    background: rgb(235, 250, 235);
-    /* border: 1px solid #ccc; */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    /* border-radius: 15px; */
-    /* text-align: center; */
-    /* justify-content: center; */
-}
-
-.product-card.active {
   display: flex;
-    /* display: flex; */
-    /* width: calc(100vw - 35px); */
-    width: 100vw;
-    height: fit-content;
-    margin: 5px 0px;
-    padding: 10px;
-    background: rgb(235, 250, 235);
-    /* border: 1px solid #ccc; */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    /* border-radius: 15px; */
-    /* text-align: center; */
-    /* justify-content: center; */
-}
-
-.product-img {
-    display: flex;
-    /* height: 100px; */
-    width: 100px;
-    height: fit-content;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-
-}
-
-.product-data {
-    /* display: flex; */
-    width: calc(100vw - 149px);
-    height: fit-content;
-    margin: 0;
-    margin-left: 10px;
-    padding: 0;
-    /* align-items: center; */
-    /* vertical-align: center; */
-}
-
-.product-title{
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    font-size: 16px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .product-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
 
-    width: 100%;
-    height: auto;
-    /* line-height: 100%; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* vertical-align: middle; */
-    /* align-items: center; */
+.product-details {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.product-name {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .product-composition {
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
 .product-price {
-    margin: 0;
-    margin-right: 10px;
-    padding: 0;
-    /* background: -webkit-linear-gradient(90deg, #ffde7a,#ffba52,#ffa05c); */
-    /* background: linear-gradient(90deg, #ffde7a,#ffba52,#ffa05c); */
-    font-weight: bold;
-    font-size: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-.product-quantity {
-    display: flex;
-    margin: 0;
-    margin-top: -2px;
-    padding: 0;
-    min-height: 40px;
-    align-items: center;
-    /* vertical-align: center; */
-    justify-content: center;
+.quantity-selector {
+  display: flex;
+  align-items: center;
 }
 
-.add-btn, .remove-btn {
-    width: 35px;
-    height: 35px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: 0;
-    background-color: #166D3B;
-    color: #fff;
-    border:azure;
-    cursor: pointer;
-    border-radius: 3px;
-    font-size: 14px;
-    font-weight: bold;
+.quantity-button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.quantity {
-    /* display: inline-block; */
-    margin-right: 15px;
-    margin-left: 15px;
-    font-weight: bold;
-    font-size: 16px;
+.quantity-button:hover {
+  background-color: #f5f5f5;
+}
+
+.quantity-button.minus:hover {
+  border-color: #f00;
+  color: #f00;
+}
+
+.quantity-button.plus:hover {
+  border-color: #0f0;
+  color: #0f0;
+}
+
+.quantity-value {
+  margin: 0 10px;
+  font-size: 18px;
 }
 
 #menu {
