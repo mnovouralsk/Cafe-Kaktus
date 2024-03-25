@@ -22,51 +22,39 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
         data.forEach(product => {
             const productCard = document.createElement('div');
             productCard.className = 'product-card ' + product.category;
-            // console.log(product.category);
-            const productImg = document.createElement('div');
-            productImg.className = 'product-img';
+            // const productImg = document.createElement('div');
+            // productImg.className = 'product-img';
 
             const productImage = document.createElement('img');
             productImage.className = 'product-image';
             productImage.src = product.image;
-            productImage.alt = 'Product Image';
-            productImg.appendChild(productImage);
+            productImage.alt = product.name;
+            productCard.appendChild(productImage);
 
             const productData = document.createElement('div');
-            productData.className = 'product-data';
+            productData.className = 'product-details';
 
-            const productTitle = document.createElement('p');
-            productTitle.className = 'product-title';
-            productTitle.textContent = product.name;
-            productData.appendChild(productTitle);
-
-            productComposition = document.createElement('p')
-            productComposition.className = 'product-composition';
-            productComposition.textContent = product.composition;
-            productData.appendChild(productComposition);
-
-            // const productInfo = document.createElement('div');
-            // productInfo.className = 'product-info';
-            // productInfo.innerHTML = '<p class="product-price">Цена: '+product.price+'</p>';
-            // productData.appendChild(productInfo);
+            productData.innerHTML = '<h2 class="product-name">'+product.name+'</h2>'
+            productData.innerHTML += '<p class="product-composition">Состав: <span class="composition-text">'+product.composition+'</span></p>';
+            productData.innerHTML += '<p class="product-price">'+product.price+' руб</p>';
 
             const productQuantity = document.createElement('div');
-            productQuantity.className = 'product-quantity';
-            productQuantity.innerHTML = '<p class="product-price">Цена: '+product.price+'</p><button class="remove-btn">-</button><span class="quantity"></span><button class="add-btn">+</button>';
+            productQuantity.className = 'quantity-selector';
+            productQuantity.innerHTML = '<button class="quantity-button minus">-</button><span class="quantity-value">0</span><button class="quantity-button plus">+</button>';
 
             items.push([product.name, product.price, 0]); //название, цена, количество
 
             productData.appendChild(productQuantity);
 
-            productCard.appendChild(productImg);
+            // productCard.appendChild(productImg);
             productCard.appendChild(productData);
             productsContainer.appendChild(productCard);
         });
 
-        const addBtns = document.querySelectorAll('.add-btn');
-        const removeBtns = document.querySelectorAll('.remove-btn');
-        const quantities = document.querySelectorAll('.quantity');
-        const info = document.querySelectorAll('.product-info >p:nth-child(2)');
+        const addBtns = document.querySelectorAll('.plus');
+        const removeBtns = document.querySelectorAll('.minus');
+        const quantities = document.querySelectorAll('.quantity-value');
+        // const info = document.querySelectorAll('.product-info >p:nth-child(2)');
 
 
         addBtns.forEach((btn, index) => {
@@ -77,7 +65,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
                 let currentQuantity = parseInt(quantities[index].textContent);
                 quantities[index].textContent = Number(currentQuantity) + 1;
                 items[index][2] = quantities[index].textContent;
-                info.textContent = items[index];
+                // info.textContent = items[index];
                 total += Number(items[index][1]);
                 tg.MainButton.setText('Заказать на сумму: ' + total + ' руб');
                 // console.log(total);
@@ -116,7 +104,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
                 const products = document.querySelectorAll('.product-card');
                 products.forEach(product => {
                     if (product.classList.contains(category)) {
-                        product.style.display = 'block';
+                        product.style.display = 'flex';
                     } else {
                         product.style.display = 'none';
                     }
