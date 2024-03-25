@@ -1,35 +1,35 @@
 [
     {
         "name": "Буррито с креветкой",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.jpg",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/pic.jpeg",
         "composition": "Лепешка большая, креветка, салат Айсберг, огурец свежий, помидор, соус Ранч.- 215гр",
         "price": 260,
         "category": "category-1"
     },
     {
         "name": "Цезарь Буррито",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/2.jpg",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/pic.jpeg",
         "composition": "Стрипсы, маринованные корнишоны, томаты, салат Айсберг, красный лук, сыр, соус Цезарь, лепешка. 300гр",
         "price": 240,
         "category": "category-2"
     },
     {
         "name": "Эстрелла бургер",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/3.jpg",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/pic.jpeg",
         "composition": "Лепешка средняя, котлета говяжья, сыр, салат Айсберг, помидор, огурец маринованный, соус BBQ. - 180г",
         "price": 180,
         "category": "category-3"
     },
     {
         "name": "Тако грибной с курицей",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/4.jpg",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/pic.jpeg",
         "composition": "Копченая курица, лепешка тортилья, лук фри, шампиньоны, салат Айсберг, огурец свежий, помидор свежий, сыр, соус Ранч. - 240г",
         "price": 180,
         "category": "category-4"
     },
     {
         "name": "Сэндвич",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/5.jpg",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/pic.jpeg",
         "composition": "Тостовый хлеб, копчёная курица, салат Айсберг, огурец свежий, соус Ранч. - 110г",
         "price": 120,
         "category": "category-5"
