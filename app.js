@@ -1,3 +1,4 @@
+
 let tg = window.Telegram.WebApp;
 let total = 0;
 
@@ -102,6 +103,13 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
 
         categoryBtns.forEach(btn => {
             btn.addEventListener('click', () => {
+                var checkbox = document.getElementById('menu');
+                if(checkbox.checked) {
+                    checkbox.checked = false;
+                } else {
+                    checkbox.checked = true;
+                }
+
                 const category = btn.dataset.category;
                 categoryBtns.forEach(btn => btn.classList.remove('active'));
                 btn.classList.add('active');
