@@ -35,8 +35,6 @@ body {
 
 #products-container {
     position: relative;
-    /* margin-top: 70px; */
-    /* top: 70px; */
     width: 100%;
     min-height: 100vh;
     background-color: rgb(255, 255, 255);
@@ -44,50 +42,55 @@ body {
 }
 
 .product-card {
-    display: block;
+    display: flex;
     /* width: calc(100vw - 35px); */
     width: 100vw;
     height: fit-content;
     margin: 5px 0px;
-    padding: 10px 0px;
-    background: rgb(237, 251, 238);
+    padding: 10px;
+    background: rgb(235, 250, 235);
     /* border: 1px solid #ccc; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     /* border-radius: 15px; */
-    text-align: center;
+    /* text-align: center; */
+    /* justify-content: center; */
 }
 
 .product-card.active {
-    display: block;
+    /* display: flex; */
     /* width: calc(100vw - 35px); */
     width: 100vw;
     height: fit-content;
     margin: 5px 0px;
     padding: 10px 0px;
+    background: rgb(235, 250, 235);
     /* border: 1px solid #ccc; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     /* border-radius: 15px; */
-    text-align: center;
+    /* text-align: center; */
+    /* justify-content: center; */
 }
 
 .product-img {
-    display: inline-block;
+    display: flex;
+    /* height: 100px; */
     width: 100px;
-    height: auto;
+    height: fit-content;
     margin: 0;
     padding: 0;
-    text-align: center;
+    align-items: center;
+
 }
 
 .product-data {
-    display: inline-block;
+    /* display: flex; */
     width: calc(100vw - 149px);
     height: fit-content;
     margin: 0;
     margin-left: 10px;
     padding: 0;
-    text-align: left;
-    vertical-align: top;
+    /* align-items: center; */
+    /* vertical-align: center; */
 }
 
 .product-title{
@@ -98,11 +101,14 @@ body {
 }
 
 .product-image {
+
     width: 100%;
     height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* line-height: 100%; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* vertical-align: middle; */
+    /* align-items: center; */
 }
 
 .product-composition {
@@ -128,7 +134,8 @@ body {
     padding: 0;
     min-height: 40px;
     align-items: center;
-    justify-content: left;
+    /* vertical-align: center; */
+    justify-content: center;
 }
 
 .add-btn, .remove-btn {
@@ -147,7 +154,7 @@ body {
 }
 
 .quantity {
-    display: inline-block;
+    /* display: inline-block; */
     margin-right: 15px;
     margin-left: 15px;
     font-weight: bold;
@@ -159,8 +166,8 @@ body {
 }
 label {
   position: fixed;
-  top: 2.5rem;
-  right: 2.5rem;
+  top: 1rem;
+  right: 1rem;
   border: .2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   width: 5rem;
