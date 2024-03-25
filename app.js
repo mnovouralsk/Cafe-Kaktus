@@ -35,7 +35,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
             productData.className = 'product-details';
 
             productData.innerHTML = '<h6 class="product-name">'+product.name+'</h6>'
-            productData.innerHTML += '<p class="product-composition">Состав: <span class="composition-text">'+product.composition+'</span></p>';
+            productData.innerHTML += '<p class="product-composition"><b>Состав:</b> <span class="composition-text">'+product.composition+'</span></p>';
             productData.innerHTML += '<p class="product-price">'+product.price+' руб</p>';
 
             const productQuantity = document.createElement('div');
