@@ -1,21 +1,21 @@
 [
     {
         "name": "Буррито с креветкой",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.jpg",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/22.png",
         "composition": "Лепешка большая, креветка, салат Айсберг, огурец свежий, помидор, соус Ранч.- 215гр",
         "price": ["260"],
         "category": "category-1"
     },
     {
         "name": "Цезарь Буррито",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/2.jpg",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/23.png",
         "composition": "Стрипсы, маринованные корнишоны, томаты, салат Айсберг, красный лук, сыр, соус Цезарь, лепешка. 300гр",
         "price": ["240"],
         "category": "category-2"
     },
     {
         "name": "Эстрелла бургер",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/3.jpg",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/21.png",
         "composition": "Лепешка средняя, котлета говяжья, сыр, салат Айсберг, помидор, огурец маринованный, соус BBQ . - 180г",
         "price": ["180"],
         "category": "category-3"
