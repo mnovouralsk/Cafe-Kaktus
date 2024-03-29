@@ -1,37 +1,48 @@
 [
     {
+        "numConstructor": 1,
         "name": "Буррито с креветкой",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/22.png",
-        "composition": "Лепешка большая, креветка, салат Айсберг, огурец свежий, помидор, соус Ранч.- 215гр",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.jpg",
+        "ingredients": "Лепешка большая, креветка, салат Айсберг, огурец свежий, помидор, соус Ранч.- 215гр",
         "price": ["260"],
         "category": "category-1"
     },
     {
+        "numConstructor": 1,
         "name": "Цезарь Буррито",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/23.png",
-        "composition": "Стрипсы, маринованные корнишоны, томаты, салат Айсберг, красный лук, сыр, соус Цезарь, лепешка. 300гр",
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/2.jpg",
+        "ingredients": "Стрипсы, маринованные корнишоны, томаты, салат Айсберг, красный лук, сыр, соус Цезарь, лепешка. 300гр",
         "price": ["240"],
         "category": "category-2"
     },
     {
+        "numConstructor": 2,
         "name": "Эстрелла бургер",
-        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/21.png",
-        "composition": "Лепешка средняя, котлета говяжья, сыр, салат Айсберг, помидор, огурец маринованный, соус BBQ . - 180г",
-        "price": ["180"],
+        "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/3.jpg",
+        "ingredients": "Лепешка средняя, котлета говяжья, сыр, салат Айсберг, помидор, огурец маринованный, соус BBQ . - 180г",
+        "price": ["180", "200", "220"],
+        "proportions": ["маленькая", "средняя", "большая"],
+        "options": ["кисло-сладкий", "сырный", "чесночный", "барбекю"],
         "category": "category-3"
     },
     {
+        "numConstructor": 2,
         "name": "Тако грибной с курицей",
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/4.jpg",
-        "composition": "Копченая курица, лепешка тортилья, лук фри, шампиньоны, салат Айсберг, огурец свежий, помидор свежий, сыр, соус Ранч. - 240г",
-        "price": ["180"],
+        "ingredients": "Копченая курица, лепешка тортилья, лук фри, шампиньоны, салат Айсберг, огурец свежий, помидор свежий, сыр, соус Ранч. - 240г",
+        "price": ["180", "200", "220"],
+        "proportions": ["маленькая", "средняя", "большая"],
+        "options": ["кисло-сладкий", "сырный", "чесночный", "барбекю"],
         "category": "category-4"
     },
     {
+        "numConstructor": 2,
         "name": "Сэндвич",
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/5.jpg",
-        "composition": "Тостовый хлеб, копчёная курица, салат Айсберг, огурец свежий, соус Ранч. - 110г",
+        "ingredients": "Тостовый хлеб, копчёная курица, салат Айсберг, огурец свежий, соус Ранч. - 110г",
         "price": ["120", "140", "160"],
+        "proportions": ["маленькая", "средняя", "большая"],
+        "options": ["кисло-сладкий", "сырный", "чесночный", "барбекю"],
         "category": "category-5"
     }
 ]
