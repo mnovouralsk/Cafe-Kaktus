@@ -1,5 +1,6 @@
 [
     {
+        "id": "1",
         "numConstructor": 1,
         "name": "Буррито с креветкой",
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.jpg",
@@ -8,6 +9,7 @@
         "category": "category-1"
     },
     {
+        "id": "2",
         "numConstructor": 1,
         "name": "Цезарь Буррито",
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/2.jpg",
@@ -16,6 +18,7 @@
         "category": "category-2"
     },
     {
+        "id": "3",
         "numConstructor": 2,
         "name": "Эстрелла бургер",
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/3.jpg",
@@ -26,6 +29,7 @@
         "category": "category-3"
     },
     {
+        "id": "4",
         "numConstructor": 2,
         "name": "Тако грибной с курицей",
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/4.jpg",
@@ -36,6 +40,7 @@
         "category": "category-4"
     },
     {
+        "id": "5",
         "numConstructor": 2,
         "name": "Сэндвич",
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/5.jpg",
