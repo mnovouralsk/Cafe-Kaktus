@@ -15,27 +15,45 @@
 <body>
   <header>
     <input type="checkbox" id="menu">
-    <label for="menu">
+    <label for="menu" class="menu-btn">
         <i class="fas fa-bars"></i>
         <i class="fa fa-times"></i>
     </label>
     <nav class="navbar">
         <ul>
-            <li><a href="#home" class="category-btn" data-category="category-1">Тортилья</a></li>
-            <li><a href="#about" class="category-btn" data-category="category-2"> Сэндвич</a></li>
-            <li><a href="#services" class="category-btn" data-category="category-3">Комида</a></li>
-            <li><a href="#projects" class="category-btn" data-category="category-4">Фри</a></li>
-            <li><a href="#contacts" class="category-btn" data-category="category-5">Соус</a></li>
-            <li><a href="#contacts" class="category-btn" data-category="category-6">Десерт</a></li>
-            <li><a href="#contacts" class="category-btn" data-category="category-7">Напитки</a></li>
+            <li><a href="#" class="category-btn all-btn" data-category="category">Все Меню</a></li>
+            <li><a href="#" class="category-btn" data-category="category-1">Тортилья</a></li>
+            <li><a href="#" class="category-btn" data-category="category-2"> Сэндвич</a></li>
+            <li><a href="#" class="category-btn" data-category="category-3">Комида</a></li>
+            <li><a href="#" class="category-btn" data-category="category-4">Фри</a></li>
+            <li><a href="#" class="category-btn" data-category="category-5">Соус</a></li>
+            <li><a href="#" class="category-btn" data-category="category-6">Десерт</a></li>
+            <li><a href="#" class="category-btn" data-category="category-7">Напитки</a></li>
+            <li><a href="#" class="category-btn exlusive-btn" data-category="category-8">Бизнес-Ланч</a></li>
+            <li><a href="#" class="category-btn exlusive-btn" data-category="category-9">Комбо набор</a></li>
         </ul>
     </nav>
 </header>
+
+<div class="slide-out-panel">
+    <div class="slide-out-content">
+      <div class="basket">
+        <p class="basket-title">Список покупок:</p>
+        <!-- Add items to the basket here -->
+      </div>
+      <button class="slide-out-btn">
+        Корзина
+      </button>
+    </div>
+  </div>
+
   <div id="products-container">
 
   </div>
 
+
+
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="app.js"></script>
+    <script src="src/construct.js"></script>
 </body>
 </html>
