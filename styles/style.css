@@ -272,7 +272,7 @@ label .fa-times {
 .option-group {
   /* margin-bottom: 16px; */
   flex: 1;
-  min-width: 150px;
+  min-width: 100px;
 }
 
 .option-group label {
