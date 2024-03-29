@@ -51,10 +51,14 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
             if (product.numConstructor == 2) {
                 // productQuantity.innerHTML = '<button class="quantity-button minus">-</button><span class="quantity-value">0</span><button class="quantity-button plus">+</button>';
                 let option = '';
+                let option2 = '';
                 for (let i = 0; i < product.proportions.length; i++) {
                     option += '<option value="'+product.proportions[i]+'">'+product.proportions[i]+'</option>';
                 }
-                productData.innerHTML += '<div class="product-options"><div class="option-group"><label for="quantity">Количество:</label><select id="quantity">'+option+'</select></div><div class="option-group"><label for="sauce">Выберите соус:</label><select id="sauce"></select></div></div>';
+                for (let i = 0; i < product.proportions.length; i++) {
+                    option2 += '<option value="'+product.options[i]+'">'+product.options[i]+'</option>';
+                }
+                productData.innerHTML += '<div class="product-options"><div class="option-group"><label for="quantity">Количество:</label><select id="quantity">'+option+'</select></div><div class="option-group"><label for="sauce">Выберите соус:</label><select id="sauce">'+option2+'</select></div></div>';
             } else if (product.numConstructor == 3) {
 
             } else {
