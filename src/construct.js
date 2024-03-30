@@ -5,20 +5,22 @@ let total = 0;
 tg.expand();
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#0db447';
+
 let items = [];
 
 // анимация боковой панели
 const slideOutBtn = document.querySelector('.slide-out-btn');
 const slideOutPanel = document.querySelector('.slide-out-panel');
 
-slideOutPanel.style.right = '-80%';
+slideOutPanel.style.right = '-90%';
 slideOutBtn.addEventListener('click', function() {
-  if (slideOutPanel.style.right === '-80%') {
-    slideOutPanel.style.right = '0%';
-  } else {
-    slideOutPanel.style.right = '-80%';
-  }
+    if (slideOutPanel.style.right === '-90%') {
+        slideOutPanel.style.right = '0%';
+    } else {
+        slideOutPanel.style.right = '-90%';
+    }
 });
+slideOutPanel.appendChild(tg.MainButton);
 
 // получение данных о меню и построение карточек
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
@@ -70,7 +72,6 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
 
             items.push([product.name, product.price, 0]); //название, цена, количество
         });
-
 
         // addBtns.forEach((btn, index) => {
         //     btn.addEventListener('click', () => {
@@ -186,4 +187,6 @@ Telegram.WebApp.onEvent("mainButtonClicked", function() {
     } else {
         tg.sendData('0');
     }
+
+
 });
