@@ -20,8 +20,9 @@ slideOutBtn.addEventListener('click', function() {
         slideOutPanel.style.right = '-90%';
     }
 });
-slideOutPanel.appendChild(tg.MainButton);
 
+const widget = document.getElementsByClassName(tg.className);
+slideOutPanel.appendChild(widget);
 // получение данных о меню и построение карточек
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
     .then(response => {
