@@ -20,9 +20,8 @@ slideOutBtn.addEventListener('click', function() {
         slideOutPanel.style.right = '-90%';
     }
 });
-
-const widget = document.getElementsByClassName(tg.className);
-slideOutPanel.appendChild(widget);
+// let n = 0;
+let t = 0;
 // получение данных о меню и построение карточек
 fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
     .then(response => {
@@ -33,49 +32,71 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
 
     })
     .then(data => {
-        console.log(data);
         const productsContainer = document.getElementById('products-container');
 
         data.forEach(product => {
-            const productCard = document.createElement('div');
-            productCard.className = 'product-card ' + product.category;
+            t++;
+            const productCard = createElementF('div', 'product-card ' + product.category);
 
-            const productImage = document.createElement('img');
-            productImage.className = 'product-image';
-            productImage.src = product.image;
-            productImage.alt = product.name;
+            const productImage = createElementF('img', 'product-image', '', product.image);
             productCard.appendChild(productImage);
 
-            const productData = document.createElement('div');
-            productData.className = 'product-details';
+            const productData = createElementF('div', 'product-details');
 
             productData.innerHTML = '<h6 class="product-name">'+product.name+'</h6>'
             productData.innerHTML += '<p class="product-composition"><b>Состав:</b> <span class="composition-text">'+product.ingredients+'</span></p>';
             if (product.numConstructor == 2) {
-                // productQuantity.innerHTML = '<button class="quantity-button minus">-</button><span class="quantity-value">0</span><button class="quantity-button plus">+</button>';
                 let option = '';
                 let option2 = '';
                 for (let i = 0; i < product.proportions.length; i++) {
-                    option += '<option value="'+product.proportions[i]+'">'+product.proportions[i]+'</option>';
+                    option += '<option value="'+i+'">'+product.proportions[i]+'</option>';
                 }
                 for (let i = 0; i < product.proportions.length; i++) {
-                    option2 += '<option value="'+product.options[i]+'">'+product.options[i]+'</option>';
+                    option2 += '<option value="'+i+'">'+product.options[i]+'</option>';
                 }
-                productData.innerHTML += '<div class="product-options"><div class="option-group"><label for="quantity">Количество:</label><select id="quantity">'+option+'</select></div><div class="option-group"><label for="sauce">Выберите соус:</label><select id="sauce">'+option2+'</select></div></div>';
+                productData.innerHTML += '<div class="product-options"><div class="option-group"><label for="quantity'+t+'">Количество:</label><select id="quantity'+t+'" class="selectSize">'+option+'</select></div><div class="option-group"><label for="sauce'+t+'">Выберите соус:</label><select id="sauce'+t+'" class="selectSauce">'+option2+'</select></div></div>';
             } else if (product.numConstructor == 3) {
 
             } else {
-                console.log('третий вариант карточки')
+                // console.log('третий вариант карточки')
             }
             productData.innerHTML += '<div class="price-button"><p class="product-price">'+product.price[0]+' руб</p><button class="product-button">Добавить</button></div>';
             productCard.appendChild(productData);
             productsContainer.appendChild(productCard);
 
-            items.push([product.name, product.price, 0]); //название, цена, количество
+            items.push([product.name, product.price, product.proportions, product.options]); //название, цена, количество
         });
+        tg.MainButton.show();
+        tg.MainButton.setText('Заказать');
 
-        // addBtns.forEach((btn, index) => {
-        //     btn.addEventListener('click', () => {
+        productPrice = document.querySelectorAll('.product-price');
+        const checkSelect = document.querySelectorAll('.selectSize');
+        console.log(checkSelect);
+        checkSelect.forEach((select, index) => {
+            // console.log(select);
+            select.addEventListener('change', (event) => {
+                // console.log(event.target.id);
+                const numbers = Number(event.target.id.match(/\d+/g));
+                // console.log(numbers);
+                productPrice[numbers-1].textContent = items[numbers-1][1][Number(event.target.value)] + ' руб';
+            });
+        });
+    })
+.catch(error => {
+    console.error('There has been a problem with your fetch operation:', error);
+});
+
+function createElementF(element, className, value = '', url = '') {
+    const el = document.createElement(element);
+    el.className = className;
+    if (url) {el.src = url;}
+    if (value) {el.textContent = value;}
+    return el;
+}
+
+
+
+
         //         if (parseInt(quantities[index].textContent) === ''){
         //             quantities[index].textContent = "0";
         //         }
@@ -140,37 +161,32 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
         //     });
         // });
 
-        const categoryBtns = document.querySelectorAll('.category-btn');
+const categoryBtns = document.querySelectorAll('.category-btn');
 
-        categoryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                var checkbox = document.getElementById('menu');
-                if(checkbox.checked) {
-                    checkbox.checked = false;
-                } else {
-                    checkbox.checked = true;
-                }
+categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        var checkbox = document.getElementById('menu');
+        if(checkbox.checked) {
+            checkbox.checked = false;
+        } else {
+            checkbox.checked = true;
+        }
 
-                const category = btn.dataset.category;
-                categoryBtns.forEach(btn => btn.classList.remove('active'));
-                btn.classList.add('active');
-                const products = document.querySelectorAll('.product-card');
-                products.forEach(product => {
-                    if (product.classList.contains(category)) {
-                        product.style.display = 'flex';
-                    } else {
-                        product.style.display = 'none';
-                    }
-                });
-            });
+        const category = btn.dataset.category;
+        categoryBtns.forEach(btn => btn.classList.remove('active'));
+        btn.classList.add('active');
+        const products = document.querySelectorAll('.product-card');
+        products.forEach(product => {
+            if (product.classList.contains(category)) {
+                product.style.display = 'flex';
+            } else {
+                product.style.display = 'none';
+            }
         });
-
-        tg.MainButton.show();
-        tg.MainButton.setText('Заказать');
-    })
-    .catch(error => {
-        console.error('There has been a problem with your fetch operation:', error);
     });
+});
+
+
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
     if (total != 0){
