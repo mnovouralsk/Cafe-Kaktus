@@ -34,8 +34,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
     .then(data => {
         const productsContainer = document.getElementById('products-container');
 
-        data.forEach(product => {
-            t++;
+        data.forEach((product, index) => {
             const productCard = createElementF('div', 'product-card ' + product.category);
 
             const productImage = createElementF('img', 'product-image', '', product.image);
@@ -54,7 +53,7 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
                 for (let i = 0; i < product.proportions.length; i++) {
                     option2 += '<option value="'+i+'">'+product.options[i]+'</option>';
                 }
-                productData.innerHTML += '<div class="product-options"><div class="option-group"><label for="quantity'+t+'">Количество:</label><select id="quantity'+t+'" class="selectSize">'+option+'</select></div><div class="option-group"><label for="sauce'+t+'">Выберите соус:</label><select id="sauce'+t+'" class="selectSauce">'+option2+'</select></div></div>';
+                productData.innerHTML += '<div class="product-options"><div class="option-group"><label for="quantity'+index+'">Количество:</label><select id="quantity'+index+'" class="selectSize">'+option+'</select></div><div class="option-group"><label for="sauce'+index+'">Выберите соус:</label><select id="sauce'+index+'" class="selectSauce">'+option2+'</select></div></div>';
             } else if (product.numConstructor == 3) {
 
             } else {
@@ -69,16 +68,52 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
         tg.MainButton.show();
         tg.MainButton.setText('Заказать');
 
-        productPrice = document.querySelectorAll('.product-price');
+        const productPrice = document.querySelectorAll('.product-price');
         const checkSelect = document.querySelectorAll('.selectSize');
-        console.log(checkSelect);
+        // console.log(checkSelect);
         checkSelect.forEach((select, index) => {
             // console.log(select);
             select.addEventListener('change', (event) => {
                 // console.log(event.target.id);
                 const numbers = Number(event.target.id.match(/\d+/g));
                 // console.log(numbers);
-                productPrice[numbers-1].textContent = items[numbers-1][1][Number(event.target.value)] + ' руб';
+                productPrice[numbers].textContent = items[numbers][1][Number(event.target.value)] + ' руб';
+            });
+        });
+        // формирование позиции заказа
+        const checkSouce = document.querySelectorAll(".selectSauce");
+        const orderPozition = document.querySelectorAll('.product-button');
+        orderPozition.forEach((orderObject, index) => {
+            // console.log(select);
+            orderObject.addEventListener('click', (event) => {
+                let iorder = {};
+                console.log(items[index][2].length);
+                if (items[index][2].length != 1) {
+                    const selectElement = document.getElementById('quantity'+index);
+                    // console.log(selectElement);
+                    const selectedValue = selectElement.value;
+                    const souceElement = document.getElementById('sauce'+index);
+                    const souceValue = souceElement.value;
+                    // console.log(items[index][0]);
+                    iorder = {
+                        name: items[index][0],
+                        price: productPrice[index].textContent,
+                        size: items[index][2][selectedValue],
+                        souce: items[index][3][souceValue]
+                    }
+                } else {
+                    iorder = {
+                        name: items[index][0],
+                        price: productPrice[index].textContent,
+                        size: "",
+                        souce: ""
+                    }
+                }
+
+                console.log(iorder.name+"//"+iorder.price+"//"+iorder.size+"//"+iorder.souce);
+                // const numbers = Number(event.target.id.match(/\d+/g));
+                // console.log(numbers);
+                // productPrice[numbers-1].textContent = items[numbers-1][1][Number(event.target.value)] + ' руб';
             });
         });
     })
