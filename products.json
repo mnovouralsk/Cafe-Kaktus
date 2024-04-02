@@ -6,6 +6,8 @@
         "image": "https://mnovouralsk.github.io/Cafe-Kaktus/image/1.jpg",
         "ingredients": "Лепешка большая, креветка, салат Айсберг, огурец свежий, помидор, соус Ранч.- 215гр",
         "price": ["260"],
+        "proportions": [""],
+        "options": [""],
         "category": "category-1"
     },
     {
