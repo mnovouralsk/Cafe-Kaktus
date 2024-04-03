@@ -132,20 +132,13 @@ function createMiniCard(order) {
 
 }
 
-// function addOrderBasket(order) {
-//     const exists = basketItems.some(item => JSON.stringify(item) === JSON.stringify(order));
-//     if (!exists) {
-
-//     }
-//     console.log(basketItems);
-// }
-
 // Функция для подсчета количества повторяющихся объектов
 function countObjects(array) {
     const countMap = new Map();
 
     array.forEach(obj => {
-        const key = JSON.stringify(obj);
+        // const key = JSON.stringify(obj);
+        const key = obj.name + obj.price + obj.size + obj.souce;
         countMap.set(key, (countMap.get(key) || 0) + 1);
     });
 
