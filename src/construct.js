@@ -7,6 +7,8 @@ tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#0db447';
 
 let items = [];
+let basketItems = [];
+let generateOrder = [];
 
 // анимация боковой панели
 const slideOutBtn = document.querySelector('.slide-out-btn');
@@ -68,33 +70,29 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
         tg.MainButton.show();
         tg.MainButton.setText('Заказать');
 
+        // меняем цену в  зависимости от выбранных опций
+        // $('select').change(()=>{
+        //     changePrice()
+        // });
         const productPrice = document.querySelectorAll('.product-price');
         const checkSelect = document.querySelectorAll('.selectSize');
-        // console.log(checkSelect);
         checkSelect.forEach((select, index) => {
-            // console.log(select);
             select.addEventListener('change', (event) => {
-                // console.log(event.target.id);
                 const numbers = Number(event.target.id.match(/\d+/g));
-                // console.log(numbers);
                 productPrice[numbers].textContent = items[numbers][1][Number(event.target.value)] + ' руб';
             });
         });
         // формирование позиции заказа
-        const checkSouce = document.querySelectorAll(".selectSauce");
         const orderPozition = document.querySelectorAll('.product-button');
         orderPozition.forEach((orderObject, index) => {
-            // console.log(select);
             orderObject.addEventListener('click', (event) => {
                 let iorder = {};
-                console.log(items[index][2].length);
+                // console.log(items[index][2].length);
                 if (items[index][2].length != 1) {
                     const selectElement = document.getElementById('quantity'+index);
-                    // console.log(selectElement);
                     const selectedValue = selectElement.value;
                     const souceElement = document.getElementById('sauce'+index);
                     const souceValue = souceElement.value;
-                    // console.log(items[index][0]);
                     iorder = {
                         name: items[index][0],
                         price: productPrice[index].textContent,
@@ -109,11 +107,11 @@ fetch('https://mnovouralsk.github.io/Cafe-Kaktus/products.json')
                         souce: ""
                     }
                 }
-
-                console.log(iorder.name+"//"+iorder.price+"//"+iorder.size+"//"+iorder.souce);
-                // const numbers = Number(event.target.id.match(/\d+/g));
-                // console.log(numbers);
-                // productPrice[numbers-1].textContent = items[numbers-1][1][Number(event.target.value)] + ' руб';
+                basketItems.push(iorder);
+                generateOrder = countObjects(basketItems);
+                console.log(generateOrder);
+                // addOrderBasket(iorder);
+                // console.log(iorder.name+"//"+iorder.price+"//"+iorder.size+"//"+iorder.souce);
             });
         });
     })
@@ -129,8 +127,35 @@ function createElementF(element, className, value = '', url = '') {
     return el;
 }
 
+function createMiniCard(order) {
+    miniCardConteiner = document.getElementById('basket-items');
 
+}
 
+// function addOrderBasket(order) {
+//     const exists = basketItems.some(item => JSON.stringify(item) === JSON.stringify(order));
+//     if (!exists) {
+
+//     }
+//     console.log(basketItems);
+// }
+
+// Функция для подсчета количества повторяющихся объектов
+function countObjects(array) {
+    const countMap = new Map();
+
+    array.forEach(obj => {
+        const key = JSON.stringify(obj);
+        countMap.set(key, (countMap.get(key) || 0) + 1);
+    });
+
+    const result = [];
+    countMap.forEach((count, key) => {
+        result.push([JSON.parse(key), count]);
+    });
+
+    return result;
+}
 
         //         if (parseInt(quantities[index].textContent) === ''){
         //             quantities[index].textContent = "0";
