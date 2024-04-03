@@ -212,8 +212,14 @@ label .fa-times {
   top: 20%;
   right: -90%;
   width: 90%;
-  height: fit-content;
-  min-height: 300px;
+
+  /* min-height: 400px; */
+
+  /* height: fit-content; */
+  max-height: 60vh;
+  min-height: 60vh;
+  /* overflow-y: auto; */
+
   background: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border: black;
@@ -226,17 +232,18 @@ label .fa-times {
   top: 0%;
   right: 0%;
   width: 100%;
-  height: 100%;
+  height: fit-content;
   padding: 20px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   align-items: center;
 }
 
 .basket {
   margin-bottom: 20px;
   width: 100%;
+  height: fit-content;
   text-align: center;
 }
 
@@ -245,6 +252,26 @@ label .fa-times {
   margin-bottom: 10px;
   color: rgb(0, 0, 0);
 }
+
+#basket-items {
+  width: 100%;
+  /* max-width: 80vw; */
+  overflow-y: scroll;
+  max-height: 350px; /* Subtract the header and footer height */
+
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+}
+
+/* BASKET ITEMS */
+/* .basket-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+} */
 
 .slide-out-btn {
   position: absolute;
