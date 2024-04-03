@@ -310,3 +310,92 @@ label .fa-times {
 .option-group select:invalid {
   color: #ccc;
 }
+
+/* карточка товара для корзины */
+/* Карточка товара */
+
+.card {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Шапка карточки товара */
+
+.card-header {
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Тело карточки товара */
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.card-text {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.size {
+  font-weight: bold;
+}
+
+.sauce {
+  font-weight: bold;
+}
+
+.quantity {
+  font-weight: bold;
+}
+
+/* Подвал карточки товара */
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn-delete {
+  background-color: #ff3333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #cc0000;
+}
